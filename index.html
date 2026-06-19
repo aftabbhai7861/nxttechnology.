@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="NXT – Next Generation Technology by Aftab. ICT Engineering student specializing in Web Development, Arduino, IoT, AI & Digital Innovation. Engineering the Future.">
+  <meta name="keywords" content="NXT, Next Generation Technology, Aftab, Web Developer, Arduino, IoT, AI, ICT Engineering, AI Digital Studio">
+  <meta name="author" content="Aftab">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#00d4ff">
+  <meta property="og:title" content="NXT – Next Generation Technology">
+  <meta property="og:description" content="Engineering the Future — Premium Web, IoT & AI Solutions">
+  <meta property="og:type" content="website">
+  <title>NXT – Next Generation Technology | Aftab</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' fill='%2300d4ff'>N</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Scroll Progress -->
+  <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
+
+  <!-- Splash / Loading Screen -->
+  <div id="loader" class="loader" aria-hidden="true">
+    <div class="loader-ring"></div>
+    <div class="loader-content">
+      <div class="loader-logo-wrap">
+        <div class="loader-logo">NXT</div>
+        <div class="loader-logo-glow"></div>
+      </div>
+      <p class="loader-brand">NXT – Next Generation Technology</p>
+      <div class="loader-bar"><div class="loader-progress" id="loader-progress"></div></div>
+      <p class="loader-percent" id="loader-percent">0%</p>
+      <p class="loader-text">Engineering the Future...</p>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <header class="header" id="header">
+    <nav class="nav container" aria-label="Main navigation">
+      <a href="#home" class="nav-logo">
+        <span class="logo-text">NXT</span>
+        <span class="logo-sub">Next Gen Tech</span>
+      </a>
+
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#education" class="nav-link">Education</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#services" class="nav-link">Services</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li class="nav-dropdown">
+          <button class="nav-link nav-dropdown-btn" aria-expanded="false">More <i class="fas fa-chevron-down"></i></button>
+          <ul class="nav-dropdown-menu">
+            <li><a href="#certifications" class="nav-link">Certifications</a></li>
+            <li><a href="#achievements" class="nav-link">Achievements</a></li>
+            <li><a href="#gallery" class="nav-link">Gallery</a></li>
+            <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
+            <li><a href="#resume" class="nav-link">Resume</a></li>
+            <li><a href="#faq" class="nav-link">FAQ</a></li>
+            <li><a href="#pricing" class="nav-link">Pricing</a></li>
+            <li><a href="#tech-stack" class="nav-link">Tech Stack</a></li>
+            <li><a href="#experience" class="nav-link">Experience</a></li>
+            <li><a href="#goals" class="nav-link">Future Goals</a></li>
+            <li><a href="#blog" class="nav-link">Blog</a></li>
+            <li><a href="#inquiry" class="nav-link">Inquiry</a></li>
+          </ul>
+        </li>
+        <li><a href="#contact" class="nav-link nav-cta">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark/light mode">
+          <i class="fas fa-moon"></i>
+        </button>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- 1. Home -->
+    <section class="hero" id="home">
+      <div class="hero-bg">
+        <div class="hero-grid"></div>
+        <div class="hero-glow hero-glow-1"></div>
+        <div class="hero-glow hero-glow-2"></div>
+        <canvas id="particle-canvas" aria-hidden="true"></canvas>
+      </div>
+      <div class="container hero-content">
+        <div class="hero-badge reveal">Premium Technology Solutions</div>
+        <h1 class="hero-title reveal">
+          <span class="hero-logo">NXT</span>
+          <span class="hero-brand">Next Generation Technology</span>
+        </h1>
+        <p class="hero-tagline reveal">
+          <span id="typing-text"></span><span class="typing-cursor">|</span>
+        </p>
+        <p class="hero-desc reveal">
+          Founded by <strong>Aftab</strong> — ICT Engineering Student, Web Developer &amp; IoT Innovator building the future of smart technology.
+        </p>
+        <div class="hero-cta reveal">
+          <a href="#projects" class="btn btn-primary"><i class="fas fa-rocket"></i> View Projects</a>
+          <a href="#contact" class="btn btn-outline"><i class="fas fa-envelope"></i> Contact Me</a>
+        </div>
+        <div class="hero-stats reveal">
+          <div class="stat-item">
+            <span class="stat-number" data-target="20">0</span>+
+            <span class="stat-label">Projects</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number" data-target="7">0</span>+
+            <span class="stat-label">Services</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number" data-target="3">0</span>+
+            <span class="stat-label">Years Learning</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number" data-target="100">0</span>%
+            <span class="stat-label">Dedication</span>
+          </div>
+        </div>
+      </div>
+      <a href="#about" class="hero-scroll" aria-label="Scroll down"><i class="fas fa-chevron-down"></i></a>
+    </section>
+
+    <!-- 2. About Aftab -->
+    <section class="section about" id="about">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">About Aftab</span>
+          <h2 class="section-title">Meet the Founder</h2>
+          <p class="section-subtitle">Passionate engineer building tomorrow's technology today</p>
+        </div>
+        <div class="about-grid">
+          <div class="about-image reveal">
+            <div class="about-img-wrapper glass">
+              <div class="about-avatar"><span>AF</span></div>
+            </div>
+            <div class="about-float-card glass">
+              <i class="fas fa-microchip"></i><span>ICT Engineer</span>
+            </div>
+          </div>
+          <div class="about-content reveal">
+            <h3>Hello, I'm <span class="text-gradient">Aftab</span></h3>
+            <p class="about-role">ICT Engineering Student | Web Developer | IoT &amp; AI Enthusiast</p>
+            <p>I am Aftab, an ICT Engineering student passionate about Web Development, Arduino, IoT, Artificial Intelligence, Software Development, and Digital Innovation. I create professional websites, Arduino projects, and smart technology solutions.</p>
+            <p>Through <strong>NXT – Next Generation Technology</strong>, I deliver premium digital experiences and embedded systems that solve real-world problems — from smart irrigation to AI-powered platforms.</p>
+            <div class="about-mission glass">
+              <div class="mission-item">
+                <i class="fas fa-bullseye"></i>
+                <div>
+                  <h4>Mission</h4>
+                  <p>Engineer accessible, intelligent technology that empowers businesses and communities worldwide.</p>
+                </div>
+              </div>
+              <div class="mission-item">
+                <i class="fas fa-eye"></i>
+                <div>
+                  <h4>Vision</h4>
+                  <p>Build NXT into a leading technology startup at the intersection of web, IoT, and artificial intelligence.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Education -->
+    <section class="section education" id="education">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">Learning Path</span>
+          <h2 class="section-title">Education</h2>
+          <p class="section-subtitle">Academic foundation and continuous technical growth</p>
+        </div>
+        <div class="timeline">
+          <div class="timeline-item reveal">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content glass">
+              <span class="timeline-date">2023 — Present</span>
+              <h3>ICT Engineering</h3>
+              <p class="timeline-org">Diploma in Information &amp; Communication Technology</p>
+              <p>Core studies in networking, programming, electronics, system design, and software engineering fundamentals.</p>
+            </div>
+          </div>
+          <div class="timeline-item reveal">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content glass">
+              <span class="timeline-date">2024</span>
+              <h3>Web Development Program</h3>
+              <p class="timeline-org">Professional Certification</p>
+              <p>Advanced training in HTML5, CSS3, JavaScript, responsive design, and modern UI/UX principles.</p>
+            </div>
+          </div>
+          <div class="timeline-item reveal">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content glass">
+              <span class="timeline-date">2024</span>
+              <h3>Arduino &amp; IoT Workshop</h3>
+              <p class="timeline-org">Technical Training</p>
+              <p>Hands-on embedded systems, sensor integration, MQTT protocols, and smart device development.</p>
+            </div>
+          </div>
+          <div class="timeline-item reveal">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content glass">
+              <span class="timeline-date">Ongoing</span>
+              <h3>AI &amp; Software Development</h3>
+              <p class="timeline-org">Self-Directed Learning</p>
+              <p>Exploring artificial intelligence, Android development, cloud platforms, and digital media production.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Skills -->
+    <section class="section skills" id="skills">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">Expertise</span>
+          <h2 class="section-title">Skills</h2>
+          <p class="section-subtitle">Technologies powering NXT solutions</p>
+        </div>
+        <div class="skills-grid">
+          <div class="skill-card glass reveal"><div class="skill-icon"><i class="fab fa-html5"></i></div><h3>HTML5</h3><div class="skill-bar"><div class="skill-progress" data-progress="95"></div></div><span class="skill-percent">95%</span></div>
+          <div class="skill-card glass reveal"><div class="skill-icon"><i class="fab fa-css3-alt"></i></div><h3>CSS3</h3><div class="skill-bar"><div class="skill-progress" data-progress="92"></div></div><span class="skill-percent">92%</span></div>
+          <div class="skill-card glass reveal"><div class="skill-icon"><i class="fab fa-js"></i></div><h3>JavaScript</h3><div class="skill-bar"><div class="skill-progress" data-progress="88"></div></div><span class="skill-percent">88%</span></div>
+          <div class="skill-card glass reveal"><div class="skill-icon"><i class="fas fa-microchip"></i></div><h3>Arduino</h3><div class="skill-bar"><div class="skill-progress" data-progress="90"></div></div><span class="skill-percent">90%</span></div>
+          <div class="skill-card glass reveal"><div class="skill-icon"><i class="fas fa-wifi"></i></div><h3>IoT</h3><div class="skill-bar"><div class="skill-progress" data-progress="85"></div></div><span class="skill-percent">85%</span></div>
+          <div class="skill-card glass reveal"><div class="skill-icon"><i class="fas fa-brain"></i></div><h3>AI</h3><div class="skill-bar"><div class="skill-progress" data-progress="78"></div></div><span class="skill-percent">78%</span></div>
+          <div class="skill-card glass reveal"><div class="skill-icon"><i class="fab fa-android"></i></div><h3>App Development</h3><div class="skill-bar"><div class="skill-progress" data-progress="80"></div></div><span class="skill-percent">80%</span></div>
+          <div class="skill-card glass reveal"><div class="skill-icon"><i class="fas fa-camera"></i></div><h3>Photography</h3><div class="skill-bar"><div class="skill-progress" data-progress="82"></div></div><span class="skill-percent">82%</span></div>
+          <div class="skill-card glass reveal"><div class="skill-icon"><i class="fas fa-video"></i></div><h3>Video Editing</h3><div class="skill-bar"><div class="skill-progress" data-progress="80"></div></div><span class="skill-percent">80%</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Services -->
+    <section class="section services" id="services">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">What We Offer</span>
+          <h2 class="section-title">Services</h2>
+          <p class="section-subtitle">End-to-end technology solutions for modern businesses</p>
+        </div>
+        <div class="services-grid">
+          <article class="service-card glass reveal"><div class="service-icon"><i class="fas fa-laptop-code"></i></div><h3>Website Development</h3><p>Premium responsive websites with modern UI, SEO optimization, and blazing-fast performance.</p><a href="#inquiry" class="service-link">Get Quote <i class="fas fa-arrow-right"></i></a></article>
+          <article class="service-card glass reveal"><div class="service-icon"><i class="fab fa-android"></i></div><h3>Android App Development</h3><p>Functional, user-friendly mobile apps designed for performance and seamless UX.</p><a href="#inquiry" class="service-link">Get Quote <i class="fas fa-arrow-right"></i></a></article>
+          <article class="service-card glass reveal"><div class="service-icon"><i class="fas fa-microchip"></i></div><h3>Arduino Projects</h3><p>Custom embedded systems, sensor integration, and automation prototypes.</p><a href="#inquiry" class="service-link">Get Quote <i class="fas fa-arrow-right"></i></a></article>
+          <article class="service-card glass reveal"><div class="service-icon"><i class="fas fa-network-wired"></i></div><h3>IoT Solutions</h3><p>Smart home systems, remote monitoring, and connected device ecosystems.</p><a href="#inquiry" class="service-link">Get Quote <i class="fas fa-arrow-right"></i></a></article>
+          <article class="service-card glass reveal"><div class="service-icon"><i class="fas fa-robot"></i></div><h3>AI Solutions</h3><p>Intelligent automation, AI integrations, and data-driven digital products.</p><a href="#inquiry" class="service-link">Get Quote <i class="fas fa-arrow-right"></i></a></article>
+          <article class="service-card glass reveal"><div class="service-icon"><i class="fas fa-camera-retro"></i></div><h3>Photography</h3><p>Professional photography including drone shots and project documentation.</p><a href="#inquiry" class="service-link">Get Quote <i class="fas fa-arrow-right"></i></a></article>
+          <article class="service-card glass reveal"><div class="service-icon"><i class="fas fa-film"></i></div><h3>Video Editing</h3><p>Cinematic edits for projects, presentations, and social media content.</p><a href="#inquiry" class="service-link">Get Quote <i class="fas fa-arrow-right"></i></a></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Projects -->
+    <section class="section projects" id="projects">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">Portfolio</span>
+          <h2 class="section-title">Projects</h2>
+          <p class="section-subtitle">Innovation in action — real solutions, real impact</p>
+        </div>
+        <div class="project-filters reveal">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="iot">IoT</button>
+          <button class="filter-btn" data-filter="arduino">Arduino</button>
+          <button class="filter-btn" data-filter="web">Web</button>
+          <button class="filter-btn" data-filter="science">Science Fair</button>
+        </div>
+        <div class="projects-grid">
+          <article class="project-card glass reveal" data-category="iot">
+            <div class="project-img" style="--project-hue:200"><i class="fas fa-seedling project-placeholder-icon"></i><div class="project-overlay"><a href="#contact" class="project-btn"><i class="fas fa-external-link-alt"></i></a></div></div>
+            <div class="project-info"><span class="project-tag">IoT</span><h3>Smart Irrigation System</h3><p>Automated watering with soil moisture sensors, Arduino control, and mobile alerts.</p></div>
+          </article>
+          <article class="project-card glass reveal" data-category="iot">
+            <div class="project-img" style="--project-hue:220"><i class="fas fa-home project-placeholder-icon"></i><div class="project-overlay"><a href="#contact" class="project-btn"><i class="fas fa-external-link-alt"></i></a></div></div>
+            <div class="project-info"><span class="project-tag">IoT</span><h3>Home Automation System</h3><p>Smart lighting and appliance control via smartphone with ESP8266 integration.</p></div>
+          </article>
+          <article class="project-card glass reveal" data-category="science">
+            <div class="project-img" style="--project-hue:260"><i class="fas fa-flask project-placeholder-icon"></i><div class="project-overlay"><a href="#contact" class="project-btn"><i class="fas fa-external-link-alt"></i></a></div></div>
+            <div class="project-info"><span class="project-tag">Science Fair</span><h3>Science Fair Project</h3><p>Award-winning entry showcasing renewable energy and smart technology innovation.</p></div>
+          </article>
+          <article class="project-card glass reveal" data-category="web">
+            <div class="project-img" style="--project-hue:210"><i class="fas fa-palette project-placeholder-icon"></i><div class="project-overlay"><a href="https://instagram.com/ai_digital_studio" target="_blank" rel="noopener noreferrer" class="project-btn"><i class="fas fa-external-link-alt"></i></a></div></div>
+            <div class="project-info"><span class="project-tag">Web</span><h3>AI Digital Studio Website</h3><p>Premium creative agency website with modern design and digital branding.</p></div>
+          </article>
+          <article class="project-card glass reveal" data-category="web">
+            <div class="project-img" style="--project-hue:195"><i class="fas fa-globe project-placeholder-icon"></i><div class="project-overlay"><a href="#contact" class="project-btn"><i class="fas fa-external-link-alt"></i></a></div></div>
+            <div class="project-info"><span class="project-tag">Web</span><h3>Portfolio Websites</h3><p>Modern portfolio and business sites with responsive design and animations.</p></div>
+          </article>
+          <article class="project-card glass reveal" data-category="arduino">
+            <div class="project-img" style="--project-hue:180"><i class="fas fa-microchip project-placeholder-icon"></i><div class="project-overlay"><a href="#contact" class="project-btn"><i class="fas fa-external-link-alt"></i></a></div></div>
+            <div class="project-info"><span class="project-tag">Arduino</span><h3>Arduino Projects</h3><p>LED matrices, sensor modules, robotics, and embedded system prototypes.</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. Certifications -->
+    <section class="section certifications" id="certifications">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">Credentials</span>
+          <h2 class="section-title">Certifications</h2>
+          <p class="section-subtitle">Verified skills and professional qualifications</p>
+        </div>
+        <div class="cert-grid">
+          <div class="cert-card glass reveal"><div class="cert-icon"><i class="fas fa-certificate"></i></div><h3>Web Development</h3><p>Full-stack fundamentals, responsive design &amp; modern frameworks</p><span class="cert-year">2024</span></div>
+          <div class="cert-card glass reveal"><div class="cert-icon"><i class="fas fa-microchip"></i></div><h3>Arduino &amp; Embedded Systems</h3><p>Sensor integration, circuit design &amp; automation prototyping</p><span class="cert-year">2024</span></div>
+          <div class="cert-card glass reveal"><div class="cert-icon"><i class="fas fa-wifi"></i></div><h3>IoT Fundamentals</h3><p>Connected devices, MQTT protocols &amp; smart system architecture</p><span class="cert-year">2024</span></div>
+          <div class="cert-card glass reveal"><div class="cert-icon"><i class="fas fa-brain"></i></div><h3>AI &amp; Machine Learning Basics</h3><p>Introduction to AI concepts, automation &amp; intelligent systems</p><span class="cert-year">2025</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. Achievements -->
+    <section class="section achievements" id="achievements">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">Milestones</span>
+          <h2 class="section-title">Achievements</h2>
+          <p class="section-subtitle">Recognition earned through dedication and innovation</p>
+        </div>
+        <div class="achievements-grid">
+          <div class="achievement-card glass reveal"><div class="achievement-icon"><i class="fas fa-trophy"></i></div><h3>Science Fair Winner</h3><p>First place for Smart Irrigation System at regional competition.</p><span class="achievement-year">2024</span></div>
+          <div class="achievement-card glass reveal"><div class="achievement-icon"><i class="fas fa-medal"></i></div><h3>IoT Innovation Award</h3><p>Recognized for outstanding home automation prototype.</p><span class="achievement-year">2024</span></div>
+          <div class="achievement-card glass reveal"><div class="achievement-icon"><i class="fas fa-star"></i></div><h3>20+ Projects Delivered</h3><p>Successfully completed web, IoT, and embedded systems projects.</p><span class="achievement-year">2023–2026</span></div>
+          <div class="achievement-card glass reveal"><div class="achievement-icon"><i class="fas fa-rocket"></i></div><h3>NXT Brand Launch</h3><p>Founded Next Generation Technology as a premium tech startup.</p><span class="achievement-year">2025</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. Gallery -->
+    <section class="section gallery" id="gallery">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">Visual Showcase</span>
+          <h2 class="section-title">Gallery</h2>
+          <p class="section-subtitle">Snapshots from projects, circuits, and creative work</p>
+        </div>
+        <div class="gallery-filters reveal">
+          <button class="gallery-filter-btn active" data-gallery-filter="all">All</button>
+          <button class="gallery-filter-btn" data-gallery-filter="projects">Projects</button>
+          <button class="gallery-filter-btn" data-gallery-filter="arduino">Arduino</button>
+          <button class="gallery-filter-btn" data-gallery-filter="drone">Drone</button>
+          <button class="gallery-filter-btn" data-gallery-filter="websites">Websites</button>
+        </div>
+        <div class="gallery-grid">
+          <div class="gallery-item reveal" data-gallery="projects" style="--gallery-hue:200"><div class="gallery-placeholder"><i class="fas fa-seedling"></i><span>Smart Irrigation</span></div><div class="gallery-caption">Project Photos</div></div>
+          <div class="gallery-item reveal" data-gallery="arduino" style="--gallery-hue:180"><div class="gallery-placeholder"><i class="fas fa-microchip"></i><span>Arduino Circuit</span></div><div class="gallery-caption">Arduino Circuits</div></div>
+          <div class="gallery-item reveal" data-gallery="drone" style="--gallery-hue:210"><div class="gallery-placeholder"><i class="fas fa-helicopter"></i><span>Aerial View</span></div><div class="gallery-caption">Drone Photography</div></div>
+          <div class="gallery-item reveal" data-gallery="websites" style="--gallery-hue:220"><div class="gallery-placeholder"><i class="fas fa-desktop"></i><span>AI Digital Studio</span></div><div class="gallery-caption">Website Screenshots</div></div>
+          <div class="gallery-item reveal" data-gallery="projects" style="--gallery-hue:195"><div class="gallery-placeholder"><i class="fas fa-home"></i><span>Home Automation</span></div><div class="gallery-caption">Project Photos</div></div>
+          <div class="gallery-item reveal" data-gallery="arduino" style="--gallery-hue:170"><div class="gallery-placeholder"><i class="fas fa-bolt"></i><span>Sensor Setup</span></div><div class="gallery-caption">Arduino Circuits</div></div>
+          <div class="gallery-item reveal" data-gallery="drone" style="--gallery-hue:230"><div class="gallery-placeholder"><i class="fas fa-mountain"></i><span>Landscape</span></div><div class="gallery-caption">Drone Photography</div></div>
+          <div class="gallery-item reveal" data-gallery="websites" style="--gallery-hue:205"><div class="gallery-placeholder"><i class="fas fa-laptop-code"></i><span>NXT Portfolio</span></div><div class="gallery-caption">Website Screenshots</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10. Testimonials -->
+    <section class="section testimonials" id="testimonials">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">Client Voices</span>
+          <h2 class="section-title">Testimonials</h2>
+          <p class="section-subtitle">What clients say about working with NXT</p>
+        </div>
+        <div class="testimonials-slider reveal" id="testimonials-slider">
+          <div class="testimonial-track" id="testimonial-track">
+            <div class="testimonial-card glass active">
+              <div class="testimonial-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+              <p>"Aftab delivered an outstanding portfolio website. Professional, fast, and exactly what I envisioned. NXT truly engineers the future."</p>
+              <div class="testimonial-author"><div class="author-avatar">RK</div><div><strong>Rahul K.</strong><span>Business Owner</span></div></div>
+            </div>
+            <div class="testimonial-card glass">
+              <div class="testimonial-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+              <p>"The smart irrigation system Aftab built for our science project won first place. Incredible IoT knowledge and dedication."</p>
+              <div class="testimonial-author"><div class="author-avatar">PS</div><div><strong>Priya S.</strong><span>Science Student</span></div></div>
+            </div>
+            <div class="testimonial-card glass">
+              <div class="testimonial-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
+              <p>"AI Digital Studio's website looks premium and modern. Aftab understood our brand vision perfectly. Highly recommended!"</p>
+              <div class="testimonial-author"><div class="author-avatar">AM</div><div><strong>Arjun M.</strong><span>Creative Director</span></div></div>
+            </div>
+          </div>
+          <div class="testimonial-dots" id="testimonial-dots"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 11. Resume -->
+    <section class="section resume" id="resume">
+      <div class="container">
+        <div class="resume-card glass reveal">
+          <div class="resume-content">
+            <span class="section-tag">Career Profile</span>
+            <h2 class="section-title">Resume</h2>
+            <p>Download or preview Aftab's complete resume — skills, education, projects, certifications, and professional experience at NXT.</p>
+            <ul class="resume-highlights">
+              <li><i class="fas fa-check"></i> ICT Engineering Background</li>
+              <li><i class="fas fa-check"></i> Web, IoT &amp; AI Project Portfolio</li>
+              <li><i class="fas fa-check"></i> Certifications &amp; Achievements</li>
+              <li><i class="fas fa-check"></i> Founder — NXT Technology</li>
+            </ul>
+            <div class="resume-btns">
+              <button class="btn btn-primary" id="download-cv"><i class="fas fa-download"></i> Download Resume</button>
+              <button class="btn btn-outline" id="view-resume"><i class="fas fa-eye"></i> View Resume</button>
+            </div>
+          </div>
+          <div class="resume-preview">
+            <div class="resume-doc glass">
+              <div class="resume-doc-header"><span>Aftab</span><small>NXT – Next Generation Technology</small></div>
+              <div class="resume-doc-lines"><div class="line long"></div><div class="line medium"></div><div class="line short"></div><div class="line long"></div><div class="line medium"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 12. Contact -->
+    <section class="section contact" id="contact">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">Get In Touch</span>
+          <h2 class="section-title">Contact</h2>
+          <p class="section-subtitle">Let's build something extraordinary together</p>
+        </div>
+        <div class="contact-grid">
+          <div class="contact-info reveal">
+            <div class="contact-card glass"><i class="fas fa-user"></i><h4>Name</h4><p>Aftab</p></div>
+            <div class="contact-card glass"><i class="fas fa-envelope"></i><h4>Email</h4><a href="mailto:aftabbhai07861@gmail.com">aftabbhai07861@gmail.com</a></div>
+            <div class="contact-card glass"><i class="fab fa-whatsapp"></i><h4>Mobile / WhatsApp</h4><a href="https://wa.me/918469640417" target="_blank" rel="noopener noreferrer">+91 8469640417</a></div>
+            <div class="social-links">
+              <a href="https://instagram.com/ai_digital_studio" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+              <a href="#" class="social-link" aria-label="GitHub"><i class="fab fa-github"></i></a>
+              <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#" class="social-link" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            </div>
+          </div>
+          <form class="contact-form glass reveal" id="contact-form" novalidate>
+            <div class="form-row">
+              <div class="form-group"><label for="name">Full Name</label><input type="text" id="name" name="name" placeholder="Your name" required></div>
+              <div class="form-group"><label for="email">Email</label><input type="email" id="email" name="email" placeholder="your@email.com" required></div>
+            </div>
+            <div class="form-group"><label for="subject">Subject</label><input type="text" id="subject" name="subject" placeholder="Project inquiry" required></div>
+            <div class="form-group"><label for="message">Message</label><textarea id="message" name="message" rows="5" placeholder="Tell me about your project..." required></textarea></div>
+            <button type="submit" class="btn btn-primary btn-full"><i class="fas fa-paper-plane"></i> Send Message</button>
+            <p class="form-status" id="form-status" role="status"></p>
+          </form>
+        </div>
+        <div class="map-container reveal">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2501.508581433529!2d72.74355373891386!3d24.1250849073576!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395d1d96bb6d2729%3A0xbae3b0fad436d629!2sBanas%20complex!5e0!3m2!1sen!2sin!4v1781888601079!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+      </div>
+    </section>
+
+    <!-- 13. FAQ -->
+    <section class="section faq" id="faq">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">Questions</span>
+          <h2 class="section-title">FAQ</h2>
+          <p class="section-subtitle">Common questions about NXT services</p>
+        </div>
+        <div class="faq-list reveal">
+          <div class="faq-item glass"><button class="faq-question" aria-expanded="false">What services does NXT offer?<i class="fas fa-plus"></i></button><div class="faq-answer"><p>NXT offers website development, Android apps, Arduino projects, IoT solutions, AI integrations, photography, and video editing.</p></div></div>
+          <div class="faq-item glass"><button class="faq-question" aria-expanded="false">How long does a typical project take?<i class="fas fa-plus"></i></button><div class="faq-answer"><p>Timeline varies by scope. A portfolio website takes 1–2 weeks, while IoT systems may take 3–4 weeks. We provide estimates after consultation.</p></div></div>
+          <div class="faq-item glass"><button class="faq-question" aria-expanded="false">Do you work with clients remotely?<i class="fas fa-plus"></i></button><div class="faq-answer"><p>Yes! NXT works with clients worldwide via WhatsApp, email, and video calls for seamless remote collaboration.</p></div></div>
+          <div class="faq-item glass"><button class="faq-question" aria-expanded="false">What is your pricing model?<i class="fas fa-plus"></i></button><div class="faq-answer"><p>We offer flexible packages — Starter, Professional, and Enterprise. See our Pricing section or submit an inquiry for a custom quote.</p></div></div>
+          <div class="faq-item glass"><button class="faq-question" aria-expanded="false">Can you handle both hardware and software?<i class="fas fa-plus"></i></button><div class="faq-answer"><p>Absolutely. Aftab specializes in full-stack solutions — from Arduino circuits and IoT firmware to modern web and mobile applications.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 14. Pricing -->
+    <section class="section pricing" id="pricing">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">Plans</span>
+          <h2 class="section-title">Pricing Plans</h2>
+          <p class="section-subtitle">Transparent packages for every project scale</p>
+        </div>
+        <div class="pricing-grid">
+          <div class="pricing-card glass reveal">
+            <div class="pricing-header"><h3>Starter</h3><div class="pricing-price"><span class="currency">₹</span><span class="amount">4,999</span></div><p>Perfect for small projects</p></div>
+            <ul class="pricing-features"><li><i class="fas fa-check"></i> Single Page Website</li><li><i class="fas fa-check"></i> Mobile Responsive</li><li><i class="fas fa-check"></i> Basic SEO</li><li><i class="fas fa-check"></i> 1 Revision Round</li><li><i class="fas fa-check"></i> 7-Day Delivery</li></ul>
+            <a href="#inquiry" class="btn btn-outline btn-full">Get Started</a>
+          </div>
+          <div class="pricing-card glass featured reveal">
+            <div class="pricing-badge">Popular</div>
+            <div class="pricing-header"><h3>Professional</h3><div class="pricing-price"><span class="currency">₹</span><span class="amount">14,999</span></div><p>Best for growing businesses</p></div>
+            <ul class="pricing-features"><li><i class="fas fa-check"></i> Multi-Page Website</li><li><i class="fas fa-check"></i> Custom UI/UX Design</li><li><i class="fas fa-check"></i> Advanced SEO</li><li><i class="fas fa-check"></i> Contact Form Integration</li><li><i class="fas fa-check"></i> 3 Revision Rounds</li><li><i class="fas fa-check"></i> 14-Day Delivery</li></ul>
+            <a href="#inquiry" class="btn btn-primary btn-full">Get Started</a>
+          </div>
+          <div class="pricing-card glass reveal">
+            <div class="pricing-header"><h3>Enterprise</h3><div class="pricing-price"><span class="amount custom">Custom</span></div><p>Full-scale technology solutions</p></div>
+            <ul class="pricing-features"><li><i class="fas fa-check"></i> Web + App + IoT</li><li><i class="fas fa-check"></i> AI Integration</li><li><i class="fas fa-check"></i> Priority Support</li><li><i class="fas fa-check"></i> Unlimited Revisions</li><li><i class="fas fa-check"></i> Dedicated Timeline</li></ul>
+            <a href="#inquiry" class="btn btn-outline btn-full">Contact Us</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 15. Technology Stack -->
+    <section class="section tech-stack" id="tech-stack">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">Tools &amp; Tech</span>
+          <h2 class="section-title">Technology Stack</h2>
+          <p class="section-subtitle">Modern tools powering every NXT solution</p>
+        </div>
+        <div class="tech-grid reveal">
+          <div class="tech-item glass"><i class="fab fa-html5"></i><span>HTML5</span></div>
+          <div class="tech-item glass"><i class="fab fa-css3-alt"></i><span>CSS3</span></div>
+          <div class="tech-item glass"><i class="fab fa-js"></i><span>JavaScript</span></div>
+          <div class="tech-item glass"><i class="fab fa-react"></i><span>React</span></div>
+          <div class="tech-item glass"><i class="fab fa-node-js"></i><span>Node.js</span></div>
+          <div class="tech-item glass"><i class="fab fa-python"></i><span>Python</span></div>
+          <div class="tech-item glass"><i class="fas fa-microchip"></i><span>Arduino</span></div>
+          <div class="tech-item glass"><i class="fas fa-wifi"></i><span>ESP8266</span></div>
+          <div class="tech-item glass"><i class="fab fa-android"></i><span>Android</span></div>
+          <div class="tech-item glass"><i class="fas fa-database"></i><span>Firebase</span></div>
+          <div class="tech-item glass"><i class="fas fa-brain"></i><span>TensorFlow</span></div>
+          <div class="tech-item glass"><i class="fab fa-git-alt"></i><span>Git</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 16. Experience Timeline -->
+    <section class="section experience" id="experience">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">Journey</span>
+          <h2 class="section-title">Experience Timeline</h2>
+          <p class="section-subtitle">Professional growth and hands-on expertise</p>
+        </div>
+        <div class="exp-timeline">
+          <div class="exp-item reveal"><div class="exp-year">2025</div><div class="exp-content glass"><h3>Founder — NXT Technology</h3><p>Launched Next Generation Technology as a premium startup offering web, IoT, and AI solutions.</p></div></div>
+          <div class="exp-item reveal"><div class="exp-year">2024</div><div class="exp-content glass"><h3>Freelance Web Developer</h3><p>Built portfolio websites, business sites, and the AI Digital Studio platform for clients.</p></div></div>
+          <div class="exp-item reveal"><div class="exp-year">2024</div><div class="exp-content glass"><h3>IoT Project Developer</h3><p>Designed smart irrigation and home automation systems using Arduino and ESP8266.</p></div></div>
+          <div class="exp-item reveal"><div class="exp-year">2023</div><div class="exp-content glass"><h3>ICT Engineering Student</h3><p>Started diploma program, building foundation in programming, networking, and electronics.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 17. Future Goals -->
+    <section class="section goals" id="goals">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">Roadmap</span>
+          <h2 class="section-title">Future Goals</h2>
+          <p class="section-subtitle">Where NXT is headed next</p>
+        </div>
+        <div class="goals-grid">
+          <div class="goal-card glass reveal"><div class="goal-icon"><i class="fas fa-building"></i></div><h3>Scale NXT Startup</h3><p>Grow into a full technology company with a dedicated team serving global clients.</p></div>
+          <div class="goal-card glass reveal"><div class="goal-icon"><i class="fas fa-robot"></i></div><h3>AI Product Launch</h3><p>Develop and launch AI-powered tools for automation and intelligent decision-making.</p></div>
+          <div class="goal-card glass reveal"><div class="goal-icon"><i class="fas fa-graduation-cap"></i></div><h3>Advanced Engineering Degree</h3><p>Complete ICT engineering and pursue advanced studies in software and AI.</p></div>
+          <div class="goal-card glass reveal"><div class="goal-icon"><i class="fas fa-globe-asia"></i></div><h3>Global Client Base</h3><p>Expand NXT services internationally with premium web, IoT, and AI offerings.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 18. Blog -->
+    <section class="section blog" id="blog">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">Insights</span>
+          <h2 class="section-title">Blog</h2>
+          <p class="section-subtitle">Thoughts on technology, innovation, and engineering</p>
+        </div>
+        <div class="blog-grid">
+          <article class="blog-card glass reveal">
+            <div class="blog-img" style="--blog-hue:200"><i class="fas fa-seedling"></i></div>
+            <div class="blog-content"><span class="blog-date">Jan 2026</span><h3>Building a Smart Irrigation System with Arduino</h3><p>Step-by-step guide to creating an automated watering system using soil sensors and IoT connectivity.</p><a href="#contact" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a></div>
+          </article>
+          <article class="blog-card glass reveal">
+            <div class="blog-img" style="--blog-hue:220"><i class="fas fa-code"></i></div>
+            <div class="blog-content"><span class="blog-date">Dec 2025</span><h3>Modern Web Design Trends for 2026</h3><p>Glassmorphism, dark themes, and micro-animations — what's shaping the future of web UX.</p><a href="#contact" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a></div>
+          </article>
+          <article class="blog-card glass reveal">
+            <div class="blog-img" style="--blog-hue:260"><i class="fas fa-brain"></i></div>
+            <div class="blog-content"><span class="blog-date">Nov 2025</span><h3>Getting Started with AI for Developers</h3><p>How students and developers can leverage AI tools to accelerate learning and project delivery.</p><a href="#contact" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 19. Client Inquiry Form -->
+    <section class="section inquiry" id="inquiry">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">Start a Project</span>
+          <h2 class="section-title">Client Inquiry Form</h2>
+          <p class="section-subtitle">Tell us about your project and get a free consultation</p>
+        </div>
+        <form class="inquiry-form glass reveal" id="inquiry-form" novalidate>
+          <div class="form-row">
+            <div class="form-group"><label for="inq-name">Full Name</label><input type="text" id="inq-name" placeholder="Your name" required></div>
+            <div class="form-group"><label for="inq-email">Email</label><input type="email" id="inq-email" placeholder="your@email.com" required></div>
+          </div>
+          <div class="form-row">
+            <div class="form-group"><label for="inq-phone">Phone / WhatsApp</label><input type="tel" id="inq-phone" placeholder="+91 XXXXX XXXXX" required></div>
+            <div class="form-group"><label for="inq-service">Service Needed</label>
+              <select id="inq-service" required>
+                <option value="">Select a service</option>
+                <option>Website Development</option>
+                <option>Android App Development</option>
+                <option>Arduino Projects</option>
+                <option>IoT Solutions</option>
+                <option>AI Solutions</option>
+                <option>Photography</option>
+                <option>Video Editing</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group"><label for="inq-budget">Budget Range</label>
+              <select id="inq-budget" required>
+                <option value="">Select budget</option>
+                <option>Under ₹5,000</option>
+                <option>₹5,000 – ₹15,000</option>
+                <option>₹15,000 – ₹50,000</option>
+                <option>₹50,000+</option>
+              </select>
+            </div>
+            <div class="form-group"><label for="inq-timeline">Timeline</label>
+              <select id="inq-timeline" required>
+                <option value="">Select timeline</option>
+                <option>ASAP (1 week)</option>
+                <option>2–4 weeks</option>
+                <option>1–2 months</option>
+                <option>Flexible</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group"><label for="inq-details">Project Details</label><textarea id="inq-details" rows="5" placeholder="Describe your project requirements..." required></textarea></div>
+          <button type="submit" class="btn btn-primary btn-full"><i class="fas fa-paper-plane"></i> Submit Inquiry</button>
+          <p class="form-status" id="inquiry-status" role="status"></p>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#home" class="footer-logo">NXT</a>
+          <p>NXT – Next Generation Technology. Engineering the Future with premium web, IoT, and AI solutions.</p>
+          <div class="footer-social">
+            <a href="https://instagram.com/ai_digital_studio" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        <div class="footer-links"><h4>Quick Links</h4><ul><li><a href="#home">Home</a></li><li><a href="#about">About</a></li><li><a href="#services">Services</a></li><li><a href="#projects">Projects</a></li><li><a href="#contact">Contact</a></li></ul></div>
+        <div class="footer-links"><h4>Services</h4><ul><li><a href="#services">Web Development</a></li><li><a href="#services">IoT Solutions</a></li><li><a href="#services">AI Solutions</a></li><li><a href="#pricing">Pricing</a></li></ul></div>
+        <div class="footer-contact"><h4>Contact</h4><p><i class="fas fa-user"></i> Aftab</p><p><i class="fas fa-envelope"></i> aftabbhai07861@gmail.com</p><p><i class="fab fa-whatsapp"></i> +91 8469640417</p></div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span id="year"></span> NXT – Next Generation Technology. All rights reserved. Built by <strong>Aftab</strong>. · <a href="admin.html" class="admin-link">Admin</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Resume Modal -->
+  <div class="modal" id="resume-modal" aria-hidden="true" role="dialog">
+    <div class="modal-overlay" id="modal-overlay"></div>
+    <div class="modal-content glass">
+      <button class="modal-close" id="modal-close" aria-label="Close"><i class="fas fa-times"></i></button>
+      <div class="modal-resume" id="modal-resume-body"></div>
+    </div>
+  </div>
+
+  <!-- Float Action Buttons -->
+  <div class="float-actions" id="float-actions" aria-label="Quick actions">
+    <button class="float-btn scroll-top" id="scroll-top" aria-label="Scroll to top"><i class="fas fa-arrow-up"></i></button>
+    <a href="mailto:aftabbhai07861@gmail.com" class="float-btn email-float" aria-label="Email"><i class="fas fa-envelope"></i></a>
+    <a href="https://wa.me/918469640417" class="float-btn whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+  </div>
+
+  <!-- AI Assistant Widget -->
+  <div class="ai-widget" id="ai-widget">
+    <button class="ai-toggle" id="ai-toggle" aria-label="Open NXT AI Assistant" aria-expanded="false">
+      <i class="fas fa-robot"></i>
+      <span class="ai-toggle-pulse"></span>
+    </button>
+
+    <div class="ai-panel glass" id="ai-panel" aria-hidden="true" role="dialog" aria-label="NXT AI Assistant">
+      <div class="ai-header">
+        <div class="ai-header-info">
+          <div class="ai-avatar"><i class="fas fa-robot"></i></div>
+          <div>
+            <strong>NXT AI Assistant</strong>
+            <span>Online · Hindi &amp; English</span>
+          </div>
+        </div>
+        <button class="ai-close" id="ai-close" aria-label="Close assistant"><i class="fas fa-times"></i></button>
+      </div>
+
+      <div class="ai-messages" id="ai-messages" role="log" aria-live="polite"></div>
+
+      <div class="ai-typing" id="ai-typing" hidden>
+        <span></span><span></span><span></span>
+      </div>
+
+      <div class="ai-form-panel" id="ai-form-panel">
+        <div class="ai-step" data-step="1">
+          <label for="ai-name">Full Name</label>
+          <input type="text" id="ai-name" placeholder="Your name" autocomplete="name">
+        </div>
+        <div class="ai-step" data-step="2">
+          <label for="ai-email">Email</label>
+          <input type="email" id="ai-email" placeholder="your@email.com" autocomplete="email">
+        </div>
+        <div class="ai-step" data-step="3">
+          <label for="ai-phone">Phone / WhatsApp</label>
+          <input type="tel" id="ai-phone" placeholder="+91 XXXXX XXXXX" autocomplete="tel">
+        </div>
+        <div class="ai-step" data-step="4">
+          <label for="ai-service">Service</label>
+          <select id="ai-service">
+            <option value="">Select service</option>
+            <option>Website Development</option>
+            <option>Android App Development</option>
+            <option>Arduino Projects</option>
+            <option>IoT Solutions</option>
+            <option>AI Solutions</option>
+            <option>Photography</option>
+            <option>Video Editing</option>
+          </select>
+        </div>
+        <div class="ai-step" data-step="5">
+          <label for="ai-message">Project Details</label>
+          <textarea id="ai-message" rows="3" placeholder="Describe your project..."></textarea>
+        </div>
+        <div class="ai-step" data-step="6">
+          <label for="ai-file">Attach File (PDF, DOCX, Images)</label>
+          <input type="file" id="ai-file" accept=".pdf,.doc,.docx,.png,.jpg,.jpeg,.webp,.gif">
+          <p class="ai-file-name" id="ai-file-name"></p>
+        </div>
+        <div class="ai-summary glass" id="ai-summary" hidden></div>
+        <div class="ai-form-actions">
+          <button type="button" class="btn btn-outline btn-sm" id="ai-prev" hidden>Back</button>
+          <button type="button" class="btn btn-primary btn-sm" id="ai-next">Next</button>
+          <button type="button" class="btn btn-primary btn-sm" id="ai-submit" hidden>Submit Enquiry</button>
+        </div>
+      </div>
+
+      <div class="ai-input-bar">
+        <button type="button" class="ai-voice-btn" id="ai-voice-in" aria-label="Hindi voice input" title="Hindi Voice Input">
+          <i class="fas fa-microphone"></i>
+        </button>
+        <input type="text" id="ai-chat-input" placeholder="Type or speak in Hindi / English..." autocomplete="off">
+        <button type="button" class="ai-voice-btn" id="ai-voice-out" aria-label="Hindi voice output" title="Read aloud in Hindi">
+          <i class="fas fa-volume-up"></i>
+        </button>
+        <button type="button" class="ai-send-btn" id="ai-send" aria-label="Send message"><i class="fas fa-paper-plane"></i></button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
