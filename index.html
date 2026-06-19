@@ -1,6 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-<head> 
+<head>   
+  <!-- SEO -->
+<link rel="canonical" href="https://nxttechnology.vercel.app/">
+
+<meta property="og:title" content="NXT – Next Generation Technology">
+<meta property="og:description" content="Engineering the Future">
+<meta property="og:url" content="https://nxttechnology.vercel.app/">
+
+<meta name="twitter:card" content="summary_large_image">
+
+<!-- Sitemap -->
+<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
   <meta name="google-site-verification" content="p4GIAgMLUWrBL-wMyYkseeOfNYcgHZ20r-saSPbP_to" />
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -783,4 +794,18 @@
 
   <script src="script.js" defer></script>
 </body>
+  <script>
+window.onload = function () {
+  setTimeout(() => {
+    const chatBox = document.getElementById("ai-messages");
+
+    if(chatBox){
+      chatBox.innerHTML += `
+      <div class="bot-message">
+      नमस्ते! NXT - Next Generation Technology में आपका स्वागत है। मैं आपका AI Assistant हूँ। कृपया बताइए आपको किस प्रकार की सेवा चाहिए?
+      </div>`;
+    }
+  }, 1000);
+};
+</script>
 </html>
